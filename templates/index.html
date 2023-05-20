@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex flex-col space-y-4 items-center mt-16">
+      <h1 class="text-3xl">Test Image</h1>
+      <form
+        method="POST"
+        action="{{ url_for('upload') }}"
+        enctype="multipart/form-data"
+      >
+        <input
+          type="file"
+          name="uploaded-file"
+          id="uploaded-file"
+          accept="*.jpg"
+        />
+        <input
+          class="p-2 border cursor-pointer bg-blue-300 rounded-md"
+          type="submit"
+          value="Process"
+        />
+      </form>
+    </div>
+    {% if img %}
+    <div class="flex flex-col space-y-4 items-center mt-16">
+      <h1 class="text-3xl">Result: {{ lpr }}</h1>
+      <img src="{{ img }}" width="{{ width }}" height="{{ height }}" />
+    </div>
+    {% endif %}
+  </body>
+</html>
