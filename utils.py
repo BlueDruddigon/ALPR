@@ -37,7 +37,7 @@ def preprocess(image_list):
     origin_RGB = []
     resized_data = []
     
-    for idx, img in enumerate(image_list):
+    for img in image_list:
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         origin_RGB.append(img)
         image = img.copy()

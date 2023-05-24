@@ -88,19 +88,6 @@ def pipeline(image):
             break
         output = outputs[idx]
         if len(output) != 4:
-            ocr_inputs = prepare_ocr(plate)
-            plate_info = ocr(model, ocr_inputs)
-            ocr_info = ''.join(plate_info)
-            cv2.rectangle(image, tuple(original_box[idx][:2]), tuple(original_box[idx][2:]), color=color, thickness=2)
-            cv2.putText(
-              image,
-              ocr_info, (original_box[idx][0], original_box[idx][1] - 2),
-              cv2.FONT_HERSHEY_SIMPLEX,
-              0.85,
-              color=(100, 100, 0),
-              thickness=1,
-              lineType=cv2.LINE_AA
-            )
             continue
         
         cls_array = np.sort(np.array(output)[..., 5]).astype(np.uint8)
