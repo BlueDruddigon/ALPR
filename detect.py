@@ -59,7 +59,7 @@ def pipeline(image):
     # forwarding
     outputs = session_forward(lpd_session, inputs)
     if np.size(outputs) == 0:
-        return image
+        return image, ''
     
     # decode outputs
     plates = []
@@ -80,7 +80,7 @@ def pipeline(image):
     # plate forwarding to get 4P coordinates
     outputs = session_forward(fpd_session, inputs)
     if np.size(outputs) == 0:
-        return image
+        return image, ''
     ocr_info = ''
     color = tuple(colors['license_plate'])
     for idx, plate in enumerate(plate_RGB):
