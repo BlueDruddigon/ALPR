@@ -59,7 +59,7 @@ def pipeline(image):
     # forwarding
     outputs = session_forward(lpd_session, inputs)
     if np.size(outputs) == 0:
-        return image, ''
+        return image, '', 'Cannot detect license plate'
     
     # decode outputs
     plates = []
@@ -80,7 +80,7 @@ def pipeline(image):
     # plate forwarding to get 4P coordinates
     outputs = session_forward(fpd_session, inputs)
     if np.size(outputs) == 0:
-        return image, ''
+        return image, '', 'Cannot detect four corners'
     ocr_info = ''
     color = tuple(colors['license_plate'])
     for idx, plate in enumerate(plate_RGB):
@@ -88,6 +88,7 @@ def pipeline(image):
             break
         output = outputs[idx]
         if len(output) != 4:
+            msg = 'Cannot detect four corners'
             continue
         
         cls_array = np.sort(np.array(output)[..., 5]).astype(np.uint8)
@@ -105,6 +106,7 @@ def pipeline(image):
               thickness=1,
               lineType=cv2.LINE_AA
             )
+            msg = ''
             continue
         
         src_dict = { label: [] for label in fpd_classes }
@@ -142,8 +144,9 @@ def pipeline(image):
           thickness=1,
           lineType=cv2.LINE_AA
         )
+        msg = ''
     
-    return image, ocr_info
+    return image, ocr_info, msg
 
 
 # if __name__ == '__main__':

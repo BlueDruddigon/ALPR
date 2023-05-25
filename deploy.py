@@ -25,9 +25,9 @@ def upload():
         img = os.path.join(app.config['PROCESSED'], filename)
         raw_image = cv2.imread(img_path)
         height, width, _ = raw_image.shape
-        processed, lpr = pipeline(raw_image)
+        processed, lpr, msg = pipeline(raw_image)
         cv2.imwrite(img, processed)
-        return render_template('index.html', img=img, height=height, width=width, lpr=lpr)
+        return render_template('index.html', img=img, height=height, width=width, lpr=lpr, msg=msg)
     return render_template('index.html')
 
 

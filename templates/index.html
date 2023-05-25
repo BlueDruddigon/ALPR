@@ -32,7 +32,7 @@
     </div>
     {% elif img and not lpr %}
     <div class="flex flex-col space-y-4 items-center mt-16">
-      <h1 class="text-3xl">Cannot recognite this license plate</h1>
+      <h1 class="text-3xl">{{ msg }}</h1>
       <img src="{{ img }}" width="{{ width }}" height="{{ height }}" />
     </div>
     {% endif %}
