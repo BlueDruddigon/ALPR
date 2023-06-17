@@ -1,0 +1,41 @@
+# pytorch libs
+timm
+nltk
+natsort
+
+# basic
+numpy
+matplotlib
+pandas
+seaborn
+
+# images
+pillow
+opencv-python
+opencv-contrib-python
+albumentations
+imutils
+wand
+
+# utilities
+requests
+pyyaml
+validators
+protobuf
+psutil
+thop
+scipy
+ipython
+
+# dataset
+pycocotools
+lmdb
+
+# onnx exports and utilities
+onnx==1.14.0
+onnxruntime-gpu==1.14.1
+onnx-simplifier
+
+# logs and progress
+tensorboard
+tqdm
