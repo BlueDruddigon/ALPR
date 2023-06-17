@@ -49,7 +49,6 @@ python labelImg.py # starting the tool
 
 ### Tool's shortcuts
 
-| ----- | ----- |
 | Ctrl+u | Load all images in directory |
 | Ctrl+r | Change the default annotation target dir |
 | Ctrl+s | Save |
