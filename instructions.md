@@ -1,4 +1,4 @@
-1. Download Anaconda3 and create environment
+# Download Anaconda3 and create environment
 
 ```bash
 cd $HOME
@@ -15,7 +15,7 @@ conda create -n $ENV python=3.9 -y
 conda activate $ENV
 ```
 
-## Install libraries and dependencies
+### Install libraries and dependencies
 
 ```bash
 # Install pytorch with GPU supports
@@ -24,7 +24,7 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt # utilities
 ```
 
-2. Collect data from internet
+# Collect data from internet
 
 - [Vietnam Motorbike License Plate Public Dataset](https://bit.ly/2QzjLiC)
 - [Vietnam Motorbike License Plate Public Dataset 2](https://bit.ly/3hGqvqQ)
@@ -32,9 +32,9 @@ pip install -r requirements.txt # utilities
 - [Vietnam Car License Plate Public Dataset 2](http://j.gs/GSB2)
 - [Vietnam Street License Plate](http://j.gs/GSB3)
 
-3. Manual labeling images with `LabelImg` tool
+# Manual labeling images with `LabelImg` tool
 
-## Downloading tool
+### Downloading tool
 
 ```bash
 conda install pyqt=5
@@ -47,7 +47,7 @@ pyrcc5 -o libs/resources.py resources.qrc
 python labelImg.py # starting the tool
 ```
 
-## Tool's shortcuts
+### Tool's shortcuts
 
 | Ctrl+u | Load all images in directory
 | Ctrl+r | Change the default annotation target dir
@@ -61,4 +61,4 @@ python labelImg.py # starting the tool
 | Ctrl+`+` | Zoom in
 | Ctrl+`-` | Zoom out
 
-## Labeling requirements
+### Labeling requirements
