@@ -49,16 +49,17 @@ python labelImg.py # starting the tool
 
 ### Tool's shortcuts
 
-| Ctrl+u | Load all images in directory
-| Ctrl+r | Change the default annotation target dir
-| Ctrl+s | Save
-| Ctrl+d | Copy the current label and rect box
-| Ctrl+Shift+d | Delete the current image
-| w | Create a rect box
-| d | Next image
-| a | Previous image
-| del | Delete the selected rect box
-| Ctrl+`+` | Zoom in
-| Ctrl+`-` | Zoom out
+| ----- | ----- |
+| Ctrl+u | Load all images in directory |
+| Ctrl+r | Change the default annotation target dir |
+| Ctrl+s | Save |
+| Ctrl+d | Copy the current label and rect box |
+| Ctrl+Shift+d | Delete the current image |
+| w | Create a rect box |
+| d | Next image |
+| a | Previous image |
+| del | Delete the selected rect box |
+| Ctrl+`+` | Zoom in |
+| Ctrl+`-` | Zoom out |
 
 ### Labeling requirements
